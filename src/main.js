@@ -3,13 +3,30 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from "./store/index"
+import moment from 'moment'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
+import echarts from "echarts";
+Vue.prototype.$echarts = echarts;
+
+
+Vue.use(ElementUI)
+
+Vue.filter('dateformat', function(dataStr, pattern = 'YYYY-MM-DD HH:mm:ss') {
+  return moment(dataStr).format(pattern)
+
+})
 
 Vue.config.productionTip = false
+
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  store
 })

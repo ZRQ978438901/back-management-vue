@@ -1,4 +1,4 @@
-# back-management
+# back-manage
 
 > A Vue.js project
 
